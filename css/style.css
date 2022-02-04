@@ -1,0 +1,79 @@
+
+.titulo {
+  padding: 15px;
+  width: 30vw;
+  margin: auto;
+
+}
+
+.btn {
+  border: 0;
+  color: white;
+  font-weight: bold;
+  background-color: blue;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 0.5em;
+}
+
+.text-input {
+  border-radius: 0.5em;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: block;
+  padding: 0.5em;
+  width: 35%;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#container-inputs{
+  position: relative;
+  float: left;
+  width: 30%px;
+  height: 590px;
+  border: 1px solid black;
+}
+
+#container-letras{
+  position: relative;
+  float: left;
+  width: 32%;
+  height: 590px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+#teclado{
+  margin-top: 400px;
+}
+
+.fila-teclado{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.letra{
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 2px;
+  font-size: 35px;
+}
+
+canvas{
+  position: relative;
+  float: left;
+  background-color: #81F7F3;
+}
+
+footer{
+  width: 100%;
+  height: 100px;
+  display: inline-block;
+  border: 1px solid black;
+}
+
+li{
+  display: inline;
+}

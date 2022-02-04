@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Juego del ahorcado</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="icon.svg" type="image/x-icon">
+  </head>
+  <body>
+      <div id="container-inputs">
+        <div style="text-align:center; margin: 50px 0px;">
+          <h1 class="titulo">Ahorcado</h1>
+          <button class="btn" id="iniciar-juego">INICIAR JUEGO</button>
+        </div>
+        <div style="text-align:center">
+          <input class="text-input" type="text" id="input-nueva-palabra" placeholder="Escriba una nueva palabra">
+          <button class="btn" id="nueva-palabra">AGREGAR PALABRA</button> 
+        </div>
+      </div>
+      <div id="container-letras">
+        <span id="nuevo-secreto"></span>
+        <div id="teclado">
+          <div id="fila-superior" class="fila-teclado">
+            <span class="letra">Q</span>
+            <span class="letra">W</span>
+            <span class="letra">E</span>
+            <span class="letra">R</span>
+            <span class="letra">T</span>
+            <span class="letra">Y</span>
+            <span class="letra">U</span>
+            <span class="letra">I</span>
+            <span class="letra">O</span>
+            <span class="letra">P</span>
+          </div>
+          <div id="fila-intermedia" class="fila-teclado">
+            <span class="letra">A</span>
+            <span class="letra">S</span>
+            <span class="letra">D</span>
+            <span class="letra">F</span>
+            <span class="letra">G</span>
+            <span class="letra">H</span>
+            <span class="letra">J</span>
+            <span class="letra">K</span>
+            <span class="letra">L</span>
+            <span class="letra">Ñ</span>
+          </div>
+          <div id="fila-inferior" class="fila-teclado">
+            <span class="letra">Z</span>
+            <span class="letra">X</span>
+            <span class="letra">C</span>
+            <span class="letra">V</span>
+            <span class="letra">B</span>
+            <span class="letra">N</span>
+            <span class="letra">M</span>
+          </div>
+        </div>
+      </div>
+        
+        <canvas id="ahorcado" width= "464" height="592">
+        </canvas>
+        <footer>
+          <h2>Datos del creador</h2>
+          <ul>
+            <li>Nombre: Joel Dario Muñoz</li>
+            <li>País: Argentina</li>
+            <li>email: joeldario9912@gmail.com</li>
+          </ul>
+
+        </footer>
+      <script type="text/javascript" src="js/funciones.js"></script>
+      <script type="text/javascript" src="js/canvas.js"></script>
+      <script type="text/javascript" src="js/ingresa-nueva-palabra.js"></script>
+  </body>
+</html>
