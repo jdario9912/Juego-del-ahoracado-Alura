@@ -163,3 +163,16 @@ function dibujaExtremidad(pincel, extremidad, x, y){
         }
     }
 }
+
+function capturaPalabra(inputNuevaPalabra) {
+    var palabra = inputNuevaPalabra.value.toUpperCase();
+    return palabra;
+}
+
+// Agrega la palabra ingresada a un div
+function agregaPalabra(palabraIngresada) {
+    var divNuevaPalabra = document.createElement('span');
+    divNuevaPalabra.classList.add('palabra-secreta');
+    divNuevaPalabra.textContent = palabraIngresada;
+    return divNuevaPalabra;
+}

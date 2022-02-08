@@ -1,7 +1,7 @@
-var palabrasSecretas = document.querySelector('#palabras-secretas');
+// ACA VA LA LOGICA DEL JUEGO
 var iniciarJuego = document.querySelector('#iniciar-juego');
 
 iniciarJuego.addEventListener('click', function (event) {
     event.preventDefault();
-    console.log(palabrasSecretas[2]);
+    var palabrasSecretas = document.querySelector('#palabras-secretas');
 })
