@@ -31,7 +31,8 @@
 #container-inputs{
   position: relative;
   float: left;
-  width: 30%px;
+  text-align: center;
+  width: 25%;
   height: 590px;
   border: 1px solid black;
 }
@@ -39,14 +40,14 @@
 #container-letras{
   position: relative;
   float: left;
-  width: 32%;
+  width: 39%;
   height: 590px;
   border: 1px solid black;
   text-align: center;
 }
 
 #teclado{
-  margin-top: 400px;
+  margin-top: 250px;
 }
 
 .fila-teclado{
@@ -59,6 +60,7 @@
   border-radius: 4px;
   padding: 2px;
   font-size: 35px;
+  cursor: pointer;
 }
 
 canvas{
@@ -83,7 +85,25 @@ li{
   float: inline-end;
 }
 
-.palabra-secreta{
-  border: 1px solid black;
-  color: red;
+.letra-secreta{
+  border-bottom: 3px solid blue;
+  margin-left: 1px;
+  margin-right: 1px;
+  font-size: 50px;
+  color: blue;
+}
+
+.letras-pal-sorteada{
+  position: relative;
+  float:left;
+}
+
+.span-invisible{
+  color: white;
+  font-size: 50px;
+}
+
+.palabra-secreta, #palabra-sorteada{
+  font-size: 0px;
+  color: white;
 }

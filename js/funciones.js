@@ -171,8 +171,8 @@ function capturaPalabra(inputNuevaPalabra) {
 
 // Agrega la palabra ingresada a un div
 function agregaPalabra(palabraIngresada) {
-    var divNuevaPalabra = document.createElement('span');
-    divNuevaPalabra.classList.add('palabra-secreta');
-    divNuevaPalabra.textContent = palabraIngresada;
-    return divNuevaPalabra;
+    var spanNuevaPalabra = document.createElement('span');
+    spanNuevaPalabra.classList.add('letras-pal-sorteada');
+    spanNuevaPalabra.textContent = palabraIngresada;
+    return spanNuevaPalabra;
 }
