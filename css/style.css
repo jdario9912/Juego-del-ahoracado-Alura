@@ -51,21 +51,14 @@
   text-align: center;
 }
 
-#teclado{
-  margin-top: 250px;
+#deletrea-pal-sorteada{
+  margin-top: 150px;
 }
 
-.fila-teclado{
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.letra{
-  border: 1px solid black;
-  border-radius: 4px;
-  padding: 2px;
-  font-size: 35px;
-  cursor: pointer;
+#ingresa-letra{
+  position: absolute;
+  margin-left: 270px;
+  z-index: -1px;
 }
 
 canvas{

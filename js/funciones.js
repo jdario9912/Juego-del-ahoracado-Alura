@@ -1,16 +1,16 @@
 function dibujaEscenario() {
     dibujaSueloVerde(pincel);
     decoraCesped();
-    dibujaPoste(pincel);                                   // Despues la tengo que sacar
-    dibujaYuyos(pincel);                                   // Despues la tengo que sacar
-    dibujaSoga();                                          // Despues la tengo que sacar
-    dibujaArgolla();                                       // Despues la tengo que sacar
-    dibujaCabeza();                                        // Despues la tengo que sacar
-    dibujaCuerpo(pincel, 271, 300, 130);                   // Despues la tengo que sacar
-    dibujaExtremidad(pincel, 'mano-izquierda', 271, 330);  // Despues la tengo que sacar
-    dibujaExtremidad(pincel, 'mano-derecha', 271, 330);    // Despues la tengo que sacar
-    dibujaExtremidad(pincel, 'pierna-izquierda', 271, 430);// Despues la tengo que sacar
-    dibujaExtremidad(pincel, 'pierna-derecha', 271, 430);  // Despues la tengo que sacar
+    // dibujaPoste(pincel);                                   // Despues la tengo que sacar 9
+    // dibujaYuyos(pincel);                                   // Despues la tengo que sacar 8
+    // dibujaSoga();                                          // Despues la tengo que sacar 7
+    // dibujaArgolla();                                       // Despues la tengo que sacar 6
+    // dibujaCabeza();                                        // Despues la tengo que sacar 5
+    // dibujaCuerpo(pincel, 271, 300, 130);                   // Despues la tengo que sacar 4
+    // dibujaExtremidad(pincel, 'mano-izquierda', 271, 330);  // Despues la tengo que sacar 3
+    // dibujaExtremidad(pincel, 'mano-derecha', 271, 330);    // Despues la tengo que sacar 2
+    // dibujaExtremidad(pincel, 'pierna-izquierda', 271, 430);// Despues la tengo que sacar 1
+    // dibujaExtremidad(pincel, 'pierna-derecha', 271, 430);  // Despues la tengo que sacar 0
 }
 
 function dibujaSueloVerde(pincel) {
@@ -175,4 +175,13 @@ function agregaPalabra(palabraIngresada) {
     spanNuevaPalabra.classList.add('letras-pal-sorteada');
     spanNuevaPalabra.textContent = palabraIngresada;
     return spanNuevaPalabra;
+}
+
+// Valida si la letra ingresada es mayuscula
+function validaCaracteres(letra) {
+
+    var reExp = /[A-Z]/g;
+    var resultado = reExp.test(letra);
+    
+    return resultado;
 }
