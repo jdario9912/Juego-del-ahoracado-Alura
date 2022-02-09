@@ -10,27 +10,28 @@ var letrasPalabra;
 var inputLetra = document.querySelector('#ingresa-letra');
 var spanLetraIncorrecta;
 var divLetrasIncorrectas = document.querySelector('#letras-incorrectas');
+var letErrAceptada;
 
 inputLetra.addEventListener('input', function () {
     letrasPalabra = document.querySelectorAll('.letra-secreta-invisible');
-
-    console.log(
-        letrasPalabra[0],
-        inputLetra.value
-    );
-    if (inputLetra.value == letrasPalabra[0].textContent) {
-        console.log('Si entro en el if');
-        letrasPalabra[0].classList.remove('letra-secreta-invisible');
-        letrasPalabra[0].classList.add('letra-secreta-visible');
-    }else{
-        console.log('No entro en el if');
-        spanLetraIncorrecta = document.createElement('span');
-        // spanLetraIncorrecta.classList.add('letra-secreta-invisible');
-        spanLetraIncorrecta.textContent = inputLetra.value;
-        divLetrasIncorrectas.appendChild(spanLetraIncorrecta);
+    if (/[A-Z]/g) {
+        for (let i = 0; i < letrasPalabra.length; i++) {        
+            if (inputLetra.value == letrasPalabra[i].textContent) {
+                console.log('Hubo coincidencia');
+                letrasPalabra[i].classList.remove('letra-secreta-invisible');
+                letrasPalabra[i].classList.add('letra-secreta-visible');
+            }else{
+                if (/* ME FALTA VALIDAR LAS LETRAS QUE NO COINCIDEN */) {
+                    console.log('No hubo coincidencia');
+                    spanLetraIncorrecta = document.createElement('span');
+                    spanLetraIncorrecta.textContent = inputLetra.value;
+                    divLetrasIncorrectas.appendChild(spanLetraIncorrecta);
+                    break;
+                }
+            }
+        }
+        inputLetra.value = '';
     }
-
-    inputLetra.value = '';
 })
 
 // letrasPalabra[0].textContent

@@ -1,9 +1,10 @@
+#titulo-boton{
+  text-align: center;
+}
 
 .titulo {
   padding: 15px;
   width: 30vw;
-  margin: auto;
-
 }
 
 .btn {
@@ -35,6 +36,10 @@
   width: 25%;
   height: 590px;
   border: 1px solid black;
+}
+
+#input-boton{
+  text-align: center;
 }
 
 #container-letras{
@@ -98,7 +103,7 @@ li{
   margin-left: 1px;
   margin-right: 1px;
   font-size: 50px;
-  color: green;
+  color: green; /* ESTE COLOR LO TENGO QUE CAMBIAR A BLANCO */
 }
 
 .letras-pal-sorteada{
@@ -114,4 +119,9 @@ li{
 .palabra-secreta, #palabra-sorteada{
   font-size: 0px;
   color: white;
+}
+
+#letras-incorrectas{
+  color: red;
+  font-size: 30px;
 }
