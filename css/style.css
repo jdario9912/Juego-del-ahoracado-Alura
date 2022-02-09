@@ -85,12 +85,20 @@ li{
   float: inline-end;
 }
 
-.letra-secreta{
+.letra-secreta-visible{
   border-bottom: 3px solid blue;
   margin-left: 1px;
   margin-right: 1px;
   font-size: 50px;
   color: blue;
+}
+
+.letra-secreta-invisible{
+  border-bottom: 3px solid blue;
+  margin-left: 1px;
+  margin-right: 1px;
+  font-size: 50px;
+  color: green;
 }
 
 .letras-pal-sorteada{

@@ -23,20 +23,11 @@ iniciarJuego.addEventListener('click', function (event) {
     // Este for recorre la palabra elegida
     for (let i = 0; i < palabra.length; i++) {
         spanLetraPalabraSorteada = document.createElement('span');
-        spanLetraPalabraSorteada.classList.add('letra-secreta');
+        spanLetraPalabraSorteada.classList.add('letra-secreta-invisible');
         spanLetraPalabraSorteada.textContent = palabra[i];
         divDeletreaPalSorteada.appendChild(spanLetraPalabraSorteada);
     }
+    var inputSuerte = document.querySelector('#ingresa-letra');
+    inputSuerte.focus();
     return
 });
-
-// PASOS A SEGUIR
-
-/*
-
-3. Comparar la letra elegida con las letras de la palabra sorteada
-4. Si la letra elegida esta en la palabra sorteada debe aparecer esa letra en la palabra sorteada
-5. Si la letra elegida no esta, se muestra
-6. Las letras erroneas no deben mostrarse repetidas
-
-*/
