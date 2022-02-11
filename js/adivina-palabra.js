@@ -1,9 +1,3 @@
-// ERRORES DEL CODIGO
-/*
-    1. CUANDO ELIJO UNA LETRA QUE SE REPITE EN LA PALABRA, NO RECONOCE LA SEGUNDA
-    2. SI PRESIONO 'INICIA JUEGO' SE SIGUEN AGREGANDO PALABRAS 
-    3. SI VUELVO A ELEJIR UNA LETRA QUE NO COINCIDE, LA VUELVE A MOSTRAR
-*/
 /**----------------------------------------------------------------------
  * Variables que necesita el codigo para generar el grafico
  */
@@ -25,8 +19,8 @@ var bandera = 0;
 var chances = 10; // Chanses que tiene el usuario para errar una letra
 var coincidenciaIncorrecta;
 var coincidencia;
-
-console.log('Chanses al iniciar juego ' + chances);
+var bloqueo;
+var juegoTermino;
 
 inputLetra.addEventListener('input', function (event) {
     event.preventDefault();
@@ -35,15 +29,11 @@ inputLetra.addEventListener('input', function (event) {
     coincidencia = false;
     letraYaEstaba = false;
     coincidenciaIncorrecta = false;
-
     if (bandera == 0) {
         fin = letrasPalabra.length;
-        console.log('Aciertos necesarios ' + fin);
     }
-    
     // Valida solo letras mayusculas
     if (validaCaracteres(letraIngresada)) {
-        
         // Verifica si la letra ingresada ya fue elegida y era correcta
         letraCorrectaYaElegida = document.querySelectorAll('.letra-secreta-visible');
         for (let i = 0; i < letraCorrectaYaElegida.length; i++) {
@@ -52,39 +42,30 @@ inputLetra.addEventListener('input', function (event) {
                 letraYaEstaba = true;
             }            
         }
-        
         if (letraYaEstaba) {
             chances --;
             chancesRestantes(chances);
-            console.log('Quedan ' + chances + ' chances');
         }
-
         // Recorre la palabra sorteada
         for (let i = 0; i < letrasPalabra.length; i++) { 
-
             // Verifica si la letra ingresada existe en la palabra elegida
             if (letraIngresada == letrasPalabra[i].textContent) {
                 letrasPalabra[i].classList.remove('letra-secreta-invisible');
                 letrasPalabra[i].classList.add('letra-secreta-visible');
                 ganar ++;
-                console.log('Aciertos ' + ganar);
                 coincidencia = true;
             }
         }
-
         // Si la letra ingresada no coincide selecciona todos los span de clase 'letra-incorrecta'
         if (coincidencia == false) {
             chances --;
             chancesRestantes(chances);
-            console.log('Quedan ' + chances + ' chances');
             spanLetraIncorrecta = document.querySelectorAll('.letra-incorrecta');
-
             // Recorre el objeto con los span de letras incorrectas
             for (let i = 0; i < spanLetraIncorrecta.length; i++) {
                 if (letraIngresada == spanLetraIncorrecta[i].textContent) {
                     coincidenciaIncorrecta = true;
                 }
-                
             }
             if (coincidenciaIncorrecta == false) {
                 spanLetraIncorrecta = document.createElement('span');
@@ -96,13 +77,19 @@ inputLetra.addEventListener('input', function (event) {
     }
     inputLetra.value = '';
     if (ganar == fin) {
-        console.log('Gano');
+        bloqueo = document.querySelector('#ingresa-letra');
+        bloqueo.setAttribute('hidden', true);
         muestraMensaje('Ganaste!');
+        var viejo = document.querySelector('#main');
+        juegoTermino = document.createElement('span');
+        juegoTermino.setAttribute('id', 'juegoTermino');
+        viejo.appendChild(juegoTermino);
+        juegoTermino.textContent = 'juego terminado';
     }
     if (chances == 0) {
-        console.log('Perdio');
+        bloqueo = document.querySelector('#ingresa-letra');
+        bloqueo.setAttribute('hidden', true);
         muestraMensaje('Perdiste');
     }
-
     bandera ++;
 });
