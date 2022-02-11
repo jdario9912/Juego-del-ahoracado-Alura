@@ -13,6 +13,7 @@ iniciarJuego.addEventListener('click', function (event) {
 
     // Esta variable contiene la palabra que se va a usar en el juego
     var palabra = palabraSorteada.textContent;
+    console.log('Aciertos necesarios ' + palabra.length);
 
     // Guarda cada letra en un span
     var spanLetraPalabraSorteada;

@@ -1,16 +1,6 @@
 function dibujaEscenario() {
     dibujaSueloVerde(pincel);
     decoraCesped();
-    // dibujaPoste(pincel);                                   // Despues la tengo que sacar 9
-    // dibujaYuyos(pincel);                                   // Despues la tengo que sacar 8
-    // dibujaSoga();                                          // Despues la tengo que sacar 7
-    // dibujaArgolla();                                       // Despues la tengo que sacar 6
-    // dibujaCabeza();                                        // Despues la tengo que sacar 5
-    // dibujaCuerpo(pincel, 271, 300, 130);                   // Despues la tengo que sacar 4
-    // dibujaExtremidad(pincel, 'mano-izquierda', 271, 330);  // Despues la tengo que sacar 3
-    // dibujaExtremidad(pincel, 'mano-derecha', 271, 330);    // Despues la tengo que sacar 2
-    // dibujaExtremidad(pincel, 'pierna-izquierda', 271, 430);// Despues la tengo que sacar 1
-    // dibujaExtremidad(pincel, 'pierna-derecha', 271, 430);  // Despues la tengo que sacar 0
 }
 
 function dibujaSueloVerde(pincel) {
@@ -184,4 +174,100 @@ function validaCaracteres(letra) {
     var resultado = reExp.test(letra);
     
     return resultado;
+}
+
+// Dibuja el ahorcado segun las chanses restantes
+function chancesRestantes(chances) {
+    switch (chances) {
+        case 9:
+            dibujaYuyos(pincel);
+            break;
+        case 8:
+            dibujaPoste(pincel);
+            dibujaYuyos(pincel);
+            break;
+        case 7:
+            dibujaPoste(pincel);
+            dibujaYuyos(pincel);
+            dibujaSoga();
+            break;
+        case 6:
+            dibujaPoste(pincel);
+            dibujaYuyos(pincel);
+            dibujaSoga();       
+            dibujaArgolla();
+            break;
+        case 5:
+            dibujaPoste(pincel);
+            dibujaYuyos(pincel);
+            dibujaSoga();       
+            dibujaArgolla();    
+            dibujaCabeza();
+            break;
+        case 4:
+            dibujaPoste(pincel);
+            dibujaYuyos(pincel);
+            dibujaSoga();       
+            dibujaArgolla();    
+            dibujaCabeza();     
+            dibujaCuerpo(pincel, 271, 300, 130);
+            break;
+        case 3:
+            dibujaPoste(pincel);                                   
+            dibujaYuyos(pincel);                                   
+            dibujaSoga();                                          
+            dibujaArgolla();                                       
+            dibujaCabeza();                                        
+            dibujaCuerpo(pincel, 271, 300, 130);                   
+            dibujaExtremidad(pincel, 'mano-izquierda', 271, 330);
+            break;
+        case 2:
+            dibujaPoste(pincel);                                   
+            dibujaYuyos(pincel);                                   
+            dibujaSoga();                                          
+            dibujaArgolla();                                       
+            dibujaCabeza();                                        
+            dibujaCuerpo(pincel, 271, 300, 130);                   
+            dibujaExtremidad(pincel, 'mano-izquierda', 271, 330);  
+            dibujaExtremidad(pincel, 'mano-derecha', 271, 330);
+            break;
+        case 1:
+            dibujaPoste(pincel);                                   
+            dibujaYuyos(pincel);                                   
+            dibujaSoga();                                          
+            dibujaArgolla();                                       
+            dibujaCabeza();                                        
+            dibujaCuerpo(pincel, 271, 300, 130);                   
+            dibujaExtremidad(pincel, 'mano-izquierda', 271, 330);  
+            dibujaExtremidad(pincel, 'mano-derecha', 271, 330);    
+            dibujaExtremidad(pincel, 'pierna-izquierda', 271, 430);
+            break;
+        case 0:
+            dibujaPoste(pincel);                                   
+            dibujaYuyos(pincel);                                   
+            dibujaSoga();                                          
+            dibujaArgolla();                                       
+            dibujaCabeza();                                        
+            dibujaCuerpo(pincel, 271, 300, 130);                   
+            dibujaExtremidad(pincel, 'pierna-izquierda', 271, 430);
+            dibujaExtremidad(pincel, 'mano-izquierda', 271, 330);  
+            dibujaExtremidad(pincel, 'mano-derecha', 271, 330);    
+            dibujaExtremidad(pincel, 'pierna-derecha', 271, 430);
+            break;
+    }
+}
+
+function muestraMensaje(mensaje) {
+    var main = document.querySelector('#container-letras');
+    var texto = document.createElement('div');
+    switch (mensaje) {
+        case 'Ganaste!':
+            texto.classList.add('mensaje-ganaste');
+            break;
+        case 'Perdiste':
+            texto.classList.add('mensaje-perdiste');
+            break;
+    }
+    texto.textContent = mensaje;
+    main.appendChild(texto);
 }
