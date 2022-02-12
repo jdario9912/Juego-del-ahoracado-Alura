@@ -5,7 +5,7 @@ function dibujaEscenario() {
 
 function dibujaSueloVerde(pincel) {
     // pinta con un color
-    pincel.fillStyle = '#00FF00';
+    pincel.fillStyle = '#5b7dcf';
     // genera un rectangulo a partir de las coordenadas [x, y] y de medidas [w, h]
     pincel.fillRect(0, 372, 880, 220);
 }
@@ -21,21 +21,21 @@ function dibujaLienaHorizontal(pincel, x, y, largo, grosor, color) {
 }
 
 function decoraCesped() {
-    dibujaLienaHorizontal(pincel, 20, 450, 10, 2, '#298A08');
-    dibujaLienaHorizontal(pincel, 810, 380, 50, 2, '#298A08');
-    dibujaLienaHorizontal(pincel, 700, 385, 20, 2, '#298A08');
-    dibujaLienaHorizontal(pincel, 400, 397, 30, 2, '#298A08');
-    dibujaLienaHorizontal(pincel, 593, 440, 25, 2, '#298A08');
-    dibujaLienaHorizontal(pincel, 286, 480, 10, 2, '#298A08');
-    dibujaLienaHorizontal(pincel, 486, 497, 12, 2, '#298A08');
-    dibujaLienaHorizontal(pincel, 771, 510, 19, 2, '#298A08');
-    dibujaLienaHorizontal(pincel, 579, 564, 25, 2, '#298A08');
-    dibujaLienaHorizontal(pincel, 330, 570, 55, 2, '#298A08');
+    dibujaLienaHorizontal(pincel, 20, 450, 10, 2, '#230dac');
+    dibujaLienaHorizontal(pincel, 810, 380, 50, 2, '#230dac');
+    dibujaLienaHorizontal(pincel, 700, 385, 20, 2, '#230dac');
+    dibujaLienaHorizontal(pincel, 400, 397, 30, 2, '#230dac');
+    dibujaLienaHorizontal(pincel, 593, 440, 25, 2, '#230dac');
+    dibujaLienaHorizontal(pincel, 286, 480, 10, 2, '#230dac');
+    dibujaLienaHorizontal(pincel, 486, 497, 12, 2, '#230dac');
+    dibujaLienaHorizontal(pincel, 771, 510, 19, 2, '#230dac');
+    dibujaLienaHorizontal(pincel, 579, 564, 25, 2, '#230dac');
+    dibujaLienaHorizontal(pincel, 330, 570, 55, 2, '#230dac');
 }
 
 function dibujaYuyos(pincel) {
     
-    pincel.fillStyle = 'yellow';
+    pincel.fillStyle = '#e8c39e';
     pincel.beginPath();
 
     pincel.moveTo(60, 570); // 1
@@ -84,7 +84,7 @@ function dibujaLineasParaSoga(pincel, x, y, largo) {
 
 function dibujaArgolla() {
     dibujaCirculo(pincel, 271, 249, 50, '#E1F5A9');
-    dibujaCirculo(pincel, 271, 249, 44, '#81F7F3');
+    dibujaCirculo(pincel, 271, 249, 44, '#b3c6f5');
 }
 
 function dibujaCirculo(pincel, x, y, radio, color) {
@@ -270,4 +270,12 @@ function muestraMensaje(mensaje) {
     }
     texto.textContent = mensaje;
     main.appendChild(texto);
+}
+
+function juegoTerminado() {
+    var viejo = document.querySelector('#main');
+    juegoTermino = document.createElement('span');
+    juegoTermino.setAttribute('id', 'juegoTermino');
+    viejo.appendChild(juegoTermino);
+    juegoTermino.textContent = 'juego terminado';
 }

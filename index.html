@@ -10,14 +10,16 @@
   </head>
   <body>
     <div id="main">
+      <header>
+        <h1>Juego del Ahorcado</h1>
+        <h2 id="aviso">(Solo funciona con letras mayúsculas)</h2>
+      </header>
       <div id="container-inputs">
         <div id="titulo-boton">
-          <h1>Ahorcado</h1>
-          <H2>(Solo funciona con letras mayúsculas)</H2>
           <button class="btn" id="iniciar-juego">INICIAR JUEGO</button>
         </div>
         <div id="input-boton">
-          <input class="text-input" type="text" id="input-nueva-palabra" placeholder="Escriba una nueva palabra">
+          <input class="text-input" type="text" id="input-nueva-palabra" placeholder="Nueva palabra">
           <button class="btn" id="nueva-palabra">AGREGAR PALABRA</button> 
         </div>
       </div>
@@ -30,7 +32,7 @@
         </div>
         <input type="text" id="ingresa-letra">
       </div>
-      <canvas id="ahorcado" width= "464" height="592">
+      <canvas id="ahorcado" width= "467" height="592">
       </canvas>
       <footer>
         <h2>Datos del creador</h2>
@@ -38,8 +40,9 @@
           <li>Nombre: Joel Dario Muñoz</li>
           <li>País: Argentina</li>
           <li>email: joeldario9912@gmail.com</li>
+          <li><a href="https://www.linkedin.com/in/joel-dario-mu%C3%B1oz-68b173180/" target="_blank">LINKEDIN</a></li>
         </ul>
-      </footer>
+      </footer id='footer'>
       <div id="palabras-secretas">
         <span class="palabra-secreta">ORACLE</span>
         <span class="palabra-secreta">ALURA</span>

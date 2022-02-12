@@ -80,16 +80,13 @@ inputLetra.addEventListener('input', function (event) {
         bloqueo = document.querySelector('#ingresa-letra');
         bloqueo.setAttribute('hidden', true);
         muestraMensaje('Ganaste!');
-        var viejo = document.querySelector('#main');
-        juegoTermino = document.createElement('span');
-        juegoTermino.setAttribute('id', 'juegoTermino');
-        viejo.appendChild(juegoTermino);
-        juegoTermino.textContent = 'juego terminado';
+        juegoTerminado();
     }
     if (chances == 0) {
         bloqueo = document.querySelector('#ingresa-letra');
         bloqueo.setAttribute('hidden', true);
         muestraMensaje('Perdiste');
+        juegoTerminado();
     }
     bandera ++;
 });

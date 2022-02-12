@@ -8,20 +8,25 @@ var divDeletreaPalSorteada;
 var inputSuerte;
 var father;
 var abuelo, padre, hijo, nieto;
+var tituloBoton, inputBoton;
 
 iniciarJuego.addEventListener('click', function (event) {
     event.preventDefault();
 
-    hijo = document.querySelectorAll('.letra-secreta-invisible');
-    // nieto = document.getElementById('juegoTermino');
-    // console.log(nieto.textContent);
-    /** ME FALTA REINICIAR EL JUEGO CUANDO, MIENTRAS ESTOY JUGANDO APRETO EL BOTON DE INICIAR JUEGO */
+    tituloBoton = document.querySelector('#titulo-boton');
+    tituloBoton.setAttribute('hidden', true);
+    inputBoton = document.querySelector('#input-boton');
+    inputBoton.setAttribute('hidden', true);    
 
-    if (hijo.length > 0) {
+    hijo = document.querySelectorAll('.letra-secreta-invisible');
+    nieto = document.querySelectorAll('.letra-secreta-visible');
+
+    if (hijo.length > 0 || nieto.length > 0) {
         // Estas lineas borran los divs con las letras de la palabra elegida
         abuelo = document.getElementById('deletrea-pal-sorteada');
         padre = document.getElementById('father');
         abuelo.removeChild(padre);
+        palabra = '';
     }
     
     // Selecciono todas las palabras secretas
@@ -55,3 +60,11 @@ iniciarJuego.addEventListener('click', function (event) {
     inputSuerte.focus();
 });
 
+// h1 = document.querySelector('h1');
+// h1.setAttribute('hidden', true);
+// aviso = document.querySelector('#aviso');
+// aviso.setAttribute('hidden', true);
+// button = document.querySelectorAll('button');
+// button.setAttribute('hidden', true);
+// input = document.querySelector('#input-nueva-palabra');
+// input.setAttribute('hidden', true);

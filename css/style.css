@@ -1,16 +1,55 @@
+*{
+  font-family: 'Courier New', Courier, monospace;
+}
+header{
+  background-color: #4b48486e;
+  text-align: center;
+  padding: 9px;
+}
+
+h1{
+  margin: 0px;
+  font-size: 55px;
+  color: #ffffff;
+}
+
+#aviso{
+  font-size: 15px;
+  color: #ffffff;
+}
+
 #titulo-boton{
   text-align: center;
 }
 
-.btn {
-  border: 0;
+#iniciar-juego{
   color: white;
   font-weight: bold;
-  background-color: blue;
+  font-size: 20px;
+  padding: 20px;
+  margin-top: 90px;
+  margin-bottom: 10px;
+  border-radius: 0.5em;
+}
+
+#iniciar-juego:active{
+  background-color: #ff5400f0;
+  border-color: black;
+}
+
+#nueva-palabra {
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 0.5em;
+}
+
+#iniciar-juego, #nueva-palabra{
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  background-color: #747474;
 }
 
 .text-input {
@@ -30,19 +69,18 @@
   text-align: center;
   width: 25%;
   height: 590px;
-  border: 1px solid black;
 }
 
 #input-boton{
   text-align: center;
+  margin-top: 160px;
 }
 
 #container-letras{
   position: relative;
   float: left;
-  width: 39%;
+  width: 40%;
   height: 590px;
-  border: 1px solid black;
   text-align: center;
 }
 
@@ -59,18 +97,31 @@
 canvas{
   position: relative;
   float: left;
-  background-color: #81F7F3;
+  background-color: #b3c6f5;
 }
 
 footer{
   width: 100%;
   height: 100px;
   display: inline-block;
-  border: 1px solid black;
+  background-color: #014ba0;
+  text-align: center;
+  color: #ffffff;
 }
 
 li{
   display: inline;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+a{
+  text-decoration: none;
+  color: #787878;
+}
+
+a:hover{
+  color:rgb(252, 252, 252);
 }
 
 #letras-seleccionadas{
@@ -80,18 +131,20 @@ li{
 
 .letra-secreta-visible{
   border-bottom: 3px solid blue;
-  margin-left: 1px;
-  margin-right: 1px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 3px;
   font-size: 50px;
-  color: blue;
+  color: #3c3c3c;
 }
 
 .letra-secreta-invisible{
   border-bottom: 3px solid blue;
-  margin-left: 1px;
-  margin-right: 1px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 3px;
   font-size: 50px;
-  color: green;
+  color: white;
 }
 
 .letras-pal-sorteada{
@@ -109,8 +162,12 @@ li{
   color: white;
 }
 
+#letras-incorrectas{
+  margin-top: 50px;
+}
+
 .letra-incorrecta{
-  color: red;
+  color: #ff5400f0;
   font-size: 30px;
 }
 
@@ -126,4 +183,9 @@ li{
   margin: 0px auto;
   color: red;
   font-size: 100px;
+}
+
+#juegoTermino{
+  color: white;
+  font-size: 0px;
 }
